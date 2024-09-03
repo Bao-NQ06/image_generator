@@ -31,7 +31,7 @@ def generate(prompt):
     return img 
 
 
-st.title('Object Detection for Images')
+st.title('Generate Image with SDXL')
 prompt = st.text_input(label="Prompt")
 if st.button("Generate"):
     if prompt is not None:
