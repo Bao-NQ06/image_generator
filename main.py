@@ -7,7 +7,7 @@ import streamlit as st
 api_key = "...."
 # Get api key: https://monsterapi.ai/
 
-def generate(prompt):
+def generate(prompt, api_key):
     monster_client = client(api_key)
 
     model = 'sdxl-base' 
@@ -35,7 +35,7 @@ st.title('Generate Image with SDXL')
 prompt = st.text_input(label="Prompt")
 if st.button("Generate"):
     if prompt is not None:
-        image = generate(prompt=prompt)
+        image = generate(prompt=prompt, api_key=api_key)
         st.image(image, caption="Generated Image ")
     else:
         st.write('Please write a prompt.')
